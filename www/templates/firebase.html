@@ -1,0 +1,26 @@
+<ion-view title="Firebase Login">
+    <ion-content>
+   
+    <button style ="width:50%;margin:10px"class="center button button-large icon-right ion-social-facebook button-positive" ng-click="facebook()">Login with Facebook</button>
+  
+        <div>
+             <h3 class="assertive padding-left" ng-show="error">{{error}}</h3>
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <input ng-model="username" type="text" placeholder="Username" />
+                </label>
+           
+                <label class="item item-input">
+                    <input ng-model="password" type="password" placeholder="Password" />
+                </label>
+            </div>
+            <div class="padding-left padding-right">
+                <div class="button-bar">
+
+                    <a class="button" ng-click="login(username, password)">Login</a>
+                    <a class="button" ng-click="register(username, password)">Register</a>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,57 @@
+<ion-view title="Upload Images" ng-init="">
+    
+
+    <ion-content>
+              <div class="card">
+             <div style="margin-left:45%;padding:10px">
+            <img  style="border-radius:50%" ng-src="{{profileImage}}" />
+           <h3 class="positive" ng-show="firstname">{{firstname}}</h3>
+      
+       </div>
+
+   </div>
+
+
+   <div class="list card">
+    
+   <button style="margin:10px"class="center button  icon-right ion-image button-positive"  ng-click="show()">Select Image</button>
+
+    <label class="item item-input">
+    <input type="text" placeholder="Year : YYYY eg:1984">
+  </label>
+   <label class="item item-input item-select">
+    <div class="input-label grey">
+     Manufacturer
+    </div>
+    <select>
+      <option ng-repeat="name in manufacturerName">{{name.name}}</option>
+      
+    </select>
+  </label>
+  <label class="item item-input">
+    <input type="text" placeholder="Location">
+  </label>
+</div>
+     <button style="margin:10px"class="center button  icon-right ion-upload button-balanced"  ng-click="upload()">Upload Image</button>
+     <button style="margin:10px"class="center button  icon-right ion-android-cancel button-assertive"  ng-click="cancel()">Cancel</button>
+        
+        
+        <div class="row" ng-repeat="image in images" ng-if="$index % 4 === 0">
+            <div class="col col-25" ng-if="$index < images.length">
+                <img ng-src="data:image/jpeg;base64,{{images[$index].image}}" width="100%" />
+            </div>
+            <div class="col col-25" ng-if="$index + 1 < images.length">
+                <img ng-src="data:image/jpeg;base64,{{images[$index + 1].image}}" width="100%" />
+            </div>
+            <div class="col col-25" ng-if="$index + 2 < images.length">
+                <img ng-src="data:image/jpeg;base64,{{images[$index + 2].image}}" width="100%" />
+            </div>
+            <div class="col col-25" ng-if="$index + 3 < images.length">
+                <img ng-src="data:image/jpeg;base64,{{images[$index + 3].image}}" width="100%" />
+
+            </div>
+        </div>
+        
+
+       </ion-content>
+</ion-view>
